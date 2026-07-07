@@ -1,0 +1,1855 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg: #0d0d0d;
+    --primary: #bbef1f;
+    --light: #eff8ff;
+
+    --card: #161010;
+    --card-hover: #211818;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#nosotros,
+#rendimiento {
+    scroll-margin-top: 233px;
+}
+
+#contacto {
+    scroll-margin-top: 300px;
+}
+
+#simuladores {
+    scroll-margin-top: 150px;
+}
+
+#cursos {
+    scroll-margin-top: -20px;
+}
+
+#parte3 {
+    scroll-margin-top: 150px;
+}
+
+#parte4 {
+    scroll-margin-top: 220px;
+}
+
+#parte5 {
+    scroll-margin-top: 100px;
+}
+
+#parte6 {
+    scroll-margin-top: 300px;
+}
+
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+section {
+    width: min(1500px, 94%);
+    margin: 120px auto;
+}
+
+header:not(.hero):not(.main-header) {
+    width: min(1500px, 94%);
+    margin: 0 auto;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--light);
+    font-family: "Host Grotesk", sans-serif;
+}
+
+h1,
+h2 {
+    letter-spacing: 2px;
+}
+
+h3 {
+    letter-spacing: 1px;
+}
+
+p {
+    color: rgba(239, 248, 255, 0.75);
+    max-width: 65ch;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: .9;
+}
+
+.section-title {
+
+    font-family: "Host Grotesk", sans-serif;
+
+    font-size: 80px;
+
+    line-height: .95;
+
+    text-transform: uppercase;
+
+    margin-bottom: 24px;
+}
+
+.section-title span {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-style: italic;
+}
+
+.section-text {
+
+    max-width: 620px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,.9);
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 18px;
+
+    border-radius: 4px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+    padding: 0 28px;
+
+    border-radius: 999px;
+
+    background: var(--primary);
+
+    color: #0d0d0d;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .25s ease;
+}
+
+.btn-primary:hover {
+    background: #d0f85a;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO (detalle)
+========================= */
+
+.hero-detalle{
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(13,13,13,.55),
+            rgba(13,13,13,.55)
+        ),
+        url("imagenes/arriba\ cockpit.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+
+/* =========================
+   HERO (ACTUALIZADO)
+========================= */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 0 80px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: min(1600px, 90%);
+
+    margin: 0 auto;
+
+    z-index: 3;
+}
+
+.hero-content h1 {
+    font-family: "Host Grotesk", sans-serif;
+
+    font-size: 110px;
+
+    font-weight: 800;
+
+    line-height: .88;
+
+    text-transform: uppercase;
+
+    color: var(--light);
+
+    margin: 0 0 35px;
+}
+
+.destacado-hero {
+    color: var(--primary);
+
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 630px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.5;
+
+    color: rgba(239,248,255,.9);
+
+    margin-bottom: 40px;
+}
+
+.hero-video{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.28);
+
+    z-index: 1;
+
+    filter:
+        brightness(.65)
+        contrast(1.1)
+        saturate(.9);
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    z-index: 2;
+}
+
+/* =========================
+   números - stats
+========================= */
+.stats-section {
+
+    width: 100%;
+
+    background: #eff8ff;
+
+    padding: 70px 0;
+}
+
+.stats-grid {
+
+    width: min(1600px, 90%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.stat-card {
+
+    text-align: center;
+}
+
+.stat-card h3 {
+
+    font-family: "Host Grotesk", sans-serif;
+
+    font-size: clamp(4rem, 6vw, 5.5rem);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #0d0d0d;
+
+    margin-bottom: 20px;
+}
+
+.stat-card p {
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 400;
+
+    color: #0d0d0d;
+
+    margin: 0;
+}
+
+
+/* =========================
+   ABOUT - nosotros
+========================= */
+.about-section {
+
+    width: min(1600px, 90%);
+
+    margin: 140px auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+
+    gap: 120px;
+
+    align-items: center;
+}
+
+.about-visual {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #111;
+}
+
+.about-visual img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.about-badge {
+
+    position: absolute;
+
+    top: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(20,20,20,.9);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    color: var(--primary);
+
+    font-size: .95rem;
+
+    font-weight: 700;
+}
+
+.about-stats {
+
+    position: absolute;
+
+    top: 110px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 60px;
+}
+
+.stat-item {
+
+    text-align: center;
+}
+
+.stat-item strong {
+
+    display: block;
+
+    color: var(--light);
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+.stat-item span {
+
+    color: rgba(255,255,255,.6);
+
+    font-size: .8rem;
+
+    letter-spacing: 1px;
+}
+
+
+.about-content h2 span {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-style: italic;
+    line-height: 1.3;
+        
+}
+
+.about-content p {
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   EFECTOS
+========================= */
+
+.hero,
+.about-section,
+.card,
+.service-card {
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+/* =========================
+   DRIVER PERFORMANCE
+========================= */
+
+.performance-section {
+    width: min(1600px, 90%);
+    margin: 140px auto;
+}
+
+.performance-top {
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    gap: 120px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.performance-copy h2 span {
+    display: block;
+    color: var(--primary);
+    font-style: italic;
+    line-height: 1.3;
+}
+
+.performance-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #161616;
+}
+
+.performance-preview img {
+    width: 100%;
+    display: block;
+}
+
+.performance-badge {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: rgba(20,20,20,.9);
+    border: 1px solid rgba(255,255,255,.08);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.performance-stats {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 70px;
+}
+
+.performance-stats strong {
+    display: block;
+    font-size: 2rem;
+}
+
+.performance-stats span {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,.6);
+}
+
+.performance-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.feature-card {
+    background: #1a1717;
+    border-radius: 10px;
+    padding: 35px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 190px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--light);
+    margin-bottom: 24px;
+}
+
+.feature-card h3 {
+    color: var(--light);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.feature-card p {
+    color: #aaaaaa;
+    line-height: 1.4;
+    max-width: 240px;
+    margin: 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+.main-header {
+    width: 100%;
+    height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+
+    padding: 0 150px;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    background: #0d0d0d;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+.nav a {
+    font-family: "Host Grotesk", sans-serif;
+
+    color: var(--light);
+
+    font-size: 1.05rem;
+
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.nav a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: var(--light);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+/* =========================
+   SIMULADORES 
+========================= */
+
+/* Estructura y alineación igual al About */
+.simulators-section {
+    width: min(1600px, 90%);
+    margin: 140px auto; /* Mismo margen superior de About */
+    display: grid;
+    grid-template-columns: 1.1fr 1.9fr; /* Distribución fiel a la captura */
+    gap: 120px; /* Mismo espacio de separación que About */
+    align-items: center;
+}
+
+/* Bloque Izquierdo (Textos) */
+.simulators-copy {
+    width: 100%;
+}
+
+/* El h2 y p heredan automáticamente los estilos globales o de sección que ya tenías */
+.simulators-copy h2 span {
+    display: block;
+    color: var(--primary); /* Mismo verde/color de énfasis */
+    font-style: italic;
+    line-height: 1.3;
+}
+
+.simulators-copy p {
+    margin-bottom: 0; /* Sin margen inferior extra al final de la sección */
+}
+
+.simulators-grid{
+    display: flex;
+    gap: 24px;
+    height: 720px;
+}
+
+.sim-card{
+    position: relative;
+
+    flex: 1;
+
+    min-width: 220px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: all .6s cubic-bezier(.77,0,.18,1);
+}
+
+/* Botón Flotante "+" */
+.sim-btn-add {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #eff8ff;
+    color: #0d0d0d;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.sim-category {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #eff8ff;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.sim-name {
+    font-family: "Host Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #eff8ff;
+    margin: 0;
+}
+
+.sim-image{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.sim-video{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition: .5s ease;
+
+    z-index: 2;
+}
+
+.sim-card.active{
+    flex: 3;
+}
+
+.sim-card.active .sim-video{
+    opacity: 1;
+}
+
+.sim-card::after{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.55) 0%,
+            rgba(0,0,0,.15) 35%,
+            rgba(0,0,0,0) 100%
+        );
+
+    z-index: 3;
+}
+
+.sim-card-content{
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 35px;
+
+    z-index: 4;
+}
+
+.sim-card.active .sim-category,
+.sim-card.active .sim-name{
+    color: #eff8ff;
+}
+
+.sim-btn-add{
+    transition: .35s ease;
+}
+
+.sim-card.active .sim-btn-add{
+    background: var(--primary);
+    color: #0d0d0d;
+    transform: rotate(45deg);
+}
+
+/* =========================
+   PARTES DEL SIMULADOR
+========================= */
+
+.parts-section{
+    position: relative;
+
+    width: 100%;
+    height: 900px;
+
+    overflow: hidden;
+}
+
+.parts-image{
+    position: absolute;
+    inset: 0;
+}
+
+.parts-image img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+.parts-title{
+    position: absolute;
+
+    top: 80px;
+
+    left: 50%;
+    transform: translateX(-800px);
+
+    z-index: 10;
+}
+
+
+.part-hotspot{
+
+    position:absolute;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:var(--primary);
+
+    color:#0d0d0d;
+
+    font-size:2.3rem;
+    font-weight:400;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.35s ease;
+}
+
+.part-hotspot.active{
+
+    background:#eff8ff;
+
+    color:#0d0d0d;
+
+    transform:rotate(45deg);
+}
+
+.hotspot-1{
+    top: 27%;
+    left: 53%;
+}
+
+.hotspot-2{
+    top: 37%;
+    left: 37%;
+}
+
+.hotspot-3{
+    top: 51%;
+    left: 55%;
+}
+
+.hotspot-4{
+    top: 67%;
+    left: 44%;
+}
+
+.hotspot-5{
+    top: 70%;
+    left: 65%;
+}
+
+.part-popup{
+
+    position:absolute;
+
+    width:280px;
+
+    padding:24px;
+
+    background:rgba(13,13,13,.96);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.3s ease;
+
+    z-index:30;
+}
+
+.part-popup.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+.part-popup h3{
+
+    margin-bottom:10px;
+
+    color:var(--primary);
+
+    font-family:"Host Grotesk", sans-serif;
+}
+
+.part-popup p{
+
+    color:rgba(255,255,255,.75);
+
+    line-height:1.5;
+
+    margin:0;
+}
+
+/* POSICIONES */
+
+.popup-1{
+    top:22%;
+    left:57%;
+}
+
+.popup-2{
+    top:32%;
+    left: calc(42% - 390px);
+}
+
+.popup-3{
+    top:45%;
+    left:59%;
+}
+
+.popup-4{
+    top:62%;
+    left: calc(42% - 255px);
+}
+
+.popup-5{
+    top:65%;
+    left:69%;
+}
+
+
+/* =========================
+   CURSOS
+========================= */
+
+.courses-section{
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 140px;
+    background: #eff8ff;
+    margin-top: -120px;
+}
+
+.courses-main-title{
+    text-align: center;
+
+    font-size: 4rem;
+    font-weight: 800;
+
+    color: #0d0d0d;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 80px;
+}
+
+/* Grid */
+.courses-grid{
+    width: min(1200px, 85%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Card Base */
+.course-card{
+    background: #0d0d0d;
+    color: #eff8ff;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    max-width: 380px;
+
+    min-height: 500px;
+
+    box-shadow: 0 20px 40px rgba(13,13,13,.08);
+
+    transition:
+        background-color .4s ease,
+        color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+/* Hover */
+.course-card:hover{
+    background: #bbef1f;
+    color: #0d0d0d;
+
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 30px 60px rgba(187,239,31,.25);
+}
+
+/* Todos los elementos internos */
+.course-card *{
+    transition: color .4s ease;
+}
+
+/* Badge */
+.course-badge{
+    font-family: "Host Grotesk", sans-serif;
+    font-style: italic;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    color: #eff8ff;
+
+    margin-bottom: 30px;
+}
+
+/* Precio */
+.course-price{
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 800;
+
+    font-size: 48px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 30px;
+}
+
+.course-price span{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Descripción */
+.course-description{
+    font-size: .9rem;
+    line-height: 1.5;
+
+    color: #eff8ff;
+
+    margin-bottom: 32px;
+}
+
+/* Features */
+.course-features{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px 12px;
+
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.feature-item{
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.feature-item.checked{
+    color: #eff8ff;
+}
+
+.feature-item.unchecked{
+    color: #6d6d6d;
+}
+
+/* Iconos */
+.feature-item .icon{
+    width: 18px;
+    height: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+
+    font-size: .7rem;
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+/* Hover colores */
+.course-card:hover .course-badge,
+.course-card:hover .course-price,
+.course-card:hover .course-description,
+.course-card:hover .feature-item.checked{
+    color: #0d0d0d;
+}
+
+.course-card:hover .feature-item.unchecked{
+    color: rgba(13,13,13,.35);
+}
+
+/* Botón */
+.course-btn{
+    width: 140px;
+    height: 44px;
+
+    margin: 0 auto;
+    margin-top: auto;
+    transition:
+        background-color .4s ease,
+        color .4s ease,
+        border-color .4s ease,
+        transform .3s ease;
+}
+
+.course-card:hover .course-btn{
+    background: #0d0d0d;
+    color: #eff8ff;
+    border-color: #0d0d0d;
+}
+
+.course-card:hover .course-btn:hover{
+    background: #2a2a2a;
+    border-color: #2a2a2a;
+    color: #eff8ff;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+/* Estructura general idéntica al About */
+.contact-section {
+    width: min(1600px, 90%);
+    margin: 240px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad y mitad exacto */
+    gap: 120px; /* Mismo espacio de separación que About */
+    align-items: flex-start;
+}
+
+/* Bloque Izquierdo (Textos herederos de About) */
+.contact-copy {
+    width: 100%;
+}
+
+.contact-copy h2 span {
+    display: block;
+    color: #bbef1f; /* Tu verde exacto */
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* Bloque Derecho (Formulario) */
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form .btn-primary {
+    width: fit-content;
+    align-self: flex-start;
+}
+
+/* Grilla para los 4 primeros inputs */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Campos de texto claros */
+.contact-form input,
+.contact-form textarea {
+    background-color: #eff8ff; /* Tu fondo claro exacto */
+    color: #0d0d0d; /* Tu negro exacto para el texto de entrada */
+    border: none;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Estilo del Placeholder */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666666;
+}
+
+/* Focus con tu verde exacto */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #bbef1f;
+}
+
+/* Textarea específico */
+.contact-form textarea {
+    height: 180px;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   DISPLAY
+========================= */
+
+.display-section {
+    width: 100%;
+    min-height: 85vh; 
+    margin: 0; 
+    display: flex;
+    align-items: center; /* centra vertical */
+    justify-content: flex-start;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 0 8%;
+
+    background: url("imagenes/cockpit.jpg") center 75% /cover no-repeat;
+}
+
+.display-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+
+/* Títulos heredando de About con tu verde exacto bbef1f */
+.display-content h2 span {
+    display: block;
+    color: #bbef1f; /* Tu verde exacto */
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Ajuste específico para que el botón mantenga el tamaño de la captura */
+.display-btn {
+    margin-top: 40px; /* Separación del título */
+    width: 180px; /* Tamaño exacto del botón */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.display-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.main-footer{
+    width: min(1600px, 95%);
+    margin: 60px auto 30px auto;
+    padding: 50px;
+}
+
+.footer-top{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand h2{
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.footer-brand p{
+    color: rgba(239,248,255,.7);
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+.footer-links h3{
+    margin-bottom: 15px;
+    color: var(--light);
+}
+
+.footer-links a{
+    display: block;
+    margin-bottom: 10px;
+
+    color: rgba(239,248,255,.6);
+    transition: .3s;
+}
+
+.footer-links a:hover{
+    color: var(--primary);
+}
+
+.footer-bottom{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: rgba(239,248,255,.5);
+}
+
+.footer-brand img{
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+
+::selection {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+:root {
+    --green-glow: rgba(187, 239, 31, .15);
+}
+
+/* ==========================================
+   IPHONE 14 PRO MAX MEDIA
+========================================== */
+
+@media (max-width: 430px) {
+
+    /* GLOBAL */
+
+    section{
+        width: 92%;
+        margin: 80px auto;
+    }
+
+    .section-title{
+        font-size: 52px;
+        line-height: .95;
+    }
+
+    .section-text{
+        font-size: 16px;
+    }
+
+    /* HERO */
+
+    .hero{
+        min-height: 85vh;
+        padding: 120px 0 60px;
+    }
+
+    .hero-content h1{
+        font-size: 58px;
+        line-height: .9;
+    }
+
+    .hero-description{
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* STATS */
+
+    .stats-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .stat-card h3{
+        font-size: 52px;
+    }
+
+    .stat-card p{
+        font-size: .95rem;
+    }
+
+    /* ABOUT */
+
+    .about-section{
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin: 100px auto;
+    }
+
+    .about-stats{
+        gap: 30px;
+    }
+
+    .stat-item strong{
+        font-size: 1.4rem;
+    }
+
+    /* PERFORMANCE */
+
+    .performance-top{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .performance-features{
+        grid-template-columns: 1fr;
+    }
+
+    /* =========================
+   SIMULADORES MOBILE
+    ========================= */
+
+    .simulators-section{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .simulators-grid{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        height: auto;
+    }
+
+    .sim-card,
+    .sim-card.active{
+        flex: none;
+
+        width: 100%;
+        height: 260px;
+    }
+
+    .sim-card-content{
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .sim-category{
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .sim-name{
+        font-size: 18px;
+    }
+
+    .sim-btn-add{
+        display: none;
+    }
+
+    .sim-video{
+        opacity: 1;
+    }
+
+    .sim-image{
+        display: none;
+    }
+
+    /* CURSOS */
+
+    .courses-main-title{
+        font-size: 2.5rem;
+    }
+
+    .courses-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .course-card{
+        padding: 35px 25px;
+    }
+
+    .course-price{
+        font-size: 48px;
+    }
+
+    .course-features{
+        grid-template-columns: 1fr;
+    }
+
+    /* CONTACTO */
+
+    .contact-section{
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin: 120px auto;
+    }
+
+    .form-grid{
+        grid-template-columns: 1fr;
+    }
+
+    /* DISPLAY */
+
+    .display-section{
+        min-height: 65vh;
+        padding: 0 24px;
+    }
+
+    /* PORCENTAJES */
+
+    .porcentajes-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .card-analisis,
+    .card-consistencia,
+    .card-precision{
+        height: 260px;
+    }
+
+    .porcentaje-num{
+        font-size: 4rem;
+    }
+
+    /* IDEAL */
+
+    .ideal-grid{
+        grid-template-columns: 1fr;
+    }
+
+    /* APRENDER */
+
+    .aprender-section{
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 60px;
+        overflow: hidden;
+    }
+
+    .aprender-wheel{
+        display: none;
+    }
+
+    .aprender-card{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .aprender-card-content{
+        max-width: 100%;
+        padding-right: 40px;
+    }
+
+    .bg-number{
+        font-size: 5rem;
+        right: 20px;
+    }
+
+    .aprender-toggle-btn{
+        width: 50px;
+        height: 50px;
+        right: -15px;
+    }
+
+    .aprender-toggle-btn span{
+        font-size: 1.8rem;
+    }
+
+    /* APEX */
+
+    .apex-section{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* FAQ */
+
+    .faq-section{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .faq-item{
+        padding: 20px;
+    }
+
+    .faq-header h3{
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
+    /* TESTIMONIOS */
+
+    .testimonios-container{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .testimonio-quote{
+        font-size: 2.2rem;
+        line-height: 1.15;
+    }
+
+    .testimonio-author{
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
+
+    .footer-top{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .main-footer{
+        padding: 30px 15px;
+    }
+
+
+    /* =========================
+    NAV MOBILE
+    ========================= */
+
+    .main-header{
+        padding: 0 24px;
+    }
+
+    .menu-toggle{
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 48px;
+        height: 48px;
+
+        border: none;
+        background: transparent;
+
+        color: #eff8ff;
+
+        font-size: 1.5rem;
+
+        cursor: pointer;
+
+        z-index: 2001;
+    }
+
+    .nav{
+        position: fixed;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - 80px);
+
+        background: #0d0d0d;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 40px;
+
+        transform: translateX(100%);
+
+        transition: transform .35s ease;
+
+        z-index: 2000;
+    }
+
+    .nav.active{
+        transform: translateX(0);
+    }
+
+    .nav a{
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    /* CTA navbar mobile */
+
+    .main-header .btn-primary{
+        display: none;
+    }
+
+        .hero-content h1{
+        font-size: 46px;
+        line-height: .95;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+
+        max-width: 100%;
+        letter-spacing: 0px;
+    }
+
+}
